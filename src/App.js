@@ -22,7 +22,7 @@ function App() {
 
     onSnapshot(q, (snapshot) => {
       setTodos(
-        snapshot.docs.map((doc) => ({ id: doc.id, todo: doc.data().todo }))
+        snapshot.docs.map((doc) => ({ id: doc.id, todo: doc.data().todo, timestamp: doc.data().timestamp }))
       );
     });
   }, []);
@@ -40,11 +40,21 @@ function App() {
   return (
     <div className="App">
       <div className="line"></div>
+      
 
       <h1 className="heading">Todo List</h1>
       <form>
         <FormControl>
-          <InputLabel>Todo:</InputLabel>
+          <InputLabel
+            sx={{
+              color: '#e77665',
+              "&.Mui-focused": {
+                color: "#e77665",
+              },
+            }}
+          >
+            Todo:
+          </InputLabel>
           <Input
             sx={{ m: 2 }}
             onChange={(e) => setInput(e.target.value)}
@@ -53,7 +63,7 @@ function App() {
         </FormControl>
         <Button
           style={{
-            backgroundColor: '#e77665'
+            backgroundColor: "#e77665",
           }}
           onClick={addTodo}
           type="submit"
@@ -64,7 +74,7 @@ function App() {
         </Button>
       </form>
 
-      <ul className="list__item">
+      <ul class='list'>
         {todos.map((todo, index) => (
           <Todo key={index} todoObj={todo} />
         ))}

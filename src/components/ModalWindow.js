@@ -46,9 +46,9 @@ function ModalWindow({ text, keys }) {
         edge="end"
         aria-label="edit"
       >
-        <ModeIcon />
+        <ModeIcon sx={{color:'#e77665'}} />
       </IconButton>
-      
+
       <Modal
         open={open}
         onClose={handleClose}

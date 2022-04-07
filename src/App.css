@@ -5,6 +5,7 @@
 .App {
   text-align: center;
   position: relative;
+  
 }
 
 .App-header {
@@ -38,10 +39,11 @@
 }
 
 
+
 .line{
   width: 0.25rem;
   height: 100%;
-  margin-left: 3.6rem;
+  margin-left: 4.6rem;
   background-color: #e77665;
   position: absolute;
   z-index: 1;
@@ -49,11 +51,3 @@
 }
 
 
-.list__item li{
-  border: 5px solid #e6f2fe;
-  border-left: none;
-  border-right: none;
-  padding-left: 6.4rem;
-
-  
-}
